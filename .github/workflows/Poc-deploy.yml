@@ -1,0 +1,13 @@
+name: POC Deployment Policy 
+on:
+ push:
+   branches:
+     - Poc-test
+ workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest 
+    environment: poc-env
+    steps: 
+       - name: Simulated deploy
+         run : echo " Deploying to protect environment "
