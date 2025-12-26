@@ -7,7 +7,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest 
-    environment: Poc-env1
+    environment: Poc-env
     steps: 
        - name: Simulated deploy
          run : echo " Deploying to protect environment "
