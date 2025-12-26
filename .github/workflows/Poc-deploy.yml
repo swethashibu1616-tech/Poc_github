@@ -11,3 +11,9 @@ jobs:
     steps: 
        - name: Simulated deploy
          run : echo " Deploying to protect environment "
+       - name: Access secret from the key vaults 
+         run : echo " Secerts accessed successfully "
+         env:
+           DB-PASSWORD: $ {{ secerts.DB-PASSWORD }}
+
+           
