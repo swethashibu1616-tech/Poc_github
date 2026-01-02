@@ -1,0 +1,30 @@
+name : Artifact Checksum POC
+on:
+   workflow_dispatch:
+   push:
+     branches:
+       - poc-test
+jobs:
+  checksum:
+    run-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Create artifacts
+        run: |
+          echo "Build generated at $(date)" > artifacts.txt
+      - name: Generate checksum
+        run: |
+           sha256sum artifact.txt > checksum.txt
+           cat checksum.txt
+      - name: Upload artifacts
+        uses: actions/upload-artifacts@v4
+        with:
+          name: app-artifact
+          path: artifact.txt
+
+      - name: Upload checksum
+        uses: actions/upload-artifacts@v4
+        with: 
+          name: artifacts-checksum
+          path: checksum.txt
