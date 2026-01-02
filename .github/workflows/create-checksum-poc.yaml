@@ -3,7 +3,7 @@ name: Create Checksum POC
 on:
   push:
     branches:
-      - poc-test
+      - Poc-test
   workflow_dispatch:
 
 jobs:
