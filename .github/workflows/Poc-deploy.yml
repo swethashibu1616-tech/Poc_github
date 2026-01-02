@@ -14,6 +14,6 @@ jobs:
        - name: Access secret from the key vaults 
          run : echo " Secerts accessed successfully "
          env:
-           DB-PASSWORD: $ {{ secerts.DB-PASSWORD }}
+           DB_PASSWORD: $ {{ secerts.DB-PASSWORD }}
 
            
